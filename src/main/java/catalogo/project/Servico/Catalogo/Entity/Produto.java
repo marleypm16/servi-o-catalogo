@@ -18,8 +18,12 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID produtoId;
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private String descricao;
+    @Column(nullable = false)
     private Integer quantidade;
+    @Column(nullable = false)
     private Double preco;
 }
