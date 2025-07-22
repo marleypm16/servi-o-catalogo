@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private UUID produtoId;
     private String nome;
     private String descricao;
     private Integer quantidade;
