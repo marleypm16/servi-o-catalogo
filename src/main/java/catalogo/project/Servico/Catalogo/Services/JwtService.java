@@ -20,7 +20,7 @@ public class JwtService {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return   JWT.create()
                     .withSubject(username)
-                    .withExpiresAt(Date.from(Instant.now().plusSeconds(3600)))
+                    .withExpiresAt(Date.from(Instant.now().plusSeconds(36000)))
                     .withIssuer("catalogo-api")
                     .sign(algorithm)
             ;
