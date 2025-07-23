@@ -32,7 +32,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll() // 2. Permite acesso ao endpoint de login
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll() // Se tiver um endpoint de registro
                         .requestMatchers(HttpMethod.GET, "/produto").hasAnyRole("ADMIN", "USER")
-                        .requestMatchers(HttpMethod.GET, "/produto/:id").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.GET, "/produto/{id}").hasAnyRole("ADMIN", "USER")
                         .requestMatchers(HttpMethod.POST, "/produto").hasRole("ADMIN")
                         .anyRequest().authenticated() // 3. Todas as outras requisições precisam de autenticação
                 ).exceptionHandling(exception -> exception.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
